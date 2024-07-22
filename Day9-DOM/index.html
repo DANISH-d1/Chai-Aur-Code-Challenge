@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>DOM MANIPULATION</title>
+  <style>
+    .css-div{
+      font-size: 18px;
+      background-color: red;
+      display: inline-block;
+      margin-top: 10px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div id="div1">Hello World</div>
+
+  <div class="div2" style="display: inline-block; margin-top: 10px;">DOM MANIPULATION</div>
+  <br>
+  <br>
+  <button class="js-button">Show li</button>
+  <ul class="ul-class">
+  </ul>
+
+  <div class="js-p">
+    <p>paragraph tag1</p>
+    <p>paragraph tag2</p>
+    <p>paragraph tag3</p>
+  </div>
+
+  <img class="js-image" src="amazon_logo.png" style="height: 50px; background-color: black; width: 100px;">
+  <br>
+
+  <button class="js-remove-class" style="display: block;">Remove Class</button>
+
+  <div class="js-div">Task 8</div>
+  <br>
+  <br>
+  <button class="js-change-text">Change Text</button>
+  <p class="js-not-changed">Not changed</p>
+
+  <button class="classmouse">Mouse Over</button>
+
+  <script>
+    /***********Activity No 1-selecting and Manipulating Elements***********/
+   
+    //Task No 1 & 2-
+    document.getElementById('div1')
+      .innerHTML = 'Welcome Everyone';
+
+    document.querySelector('.div2')
+      .style.color = "blue";
+    document.querySelector('.div2')
+      .style.backgroundColor = "red";
+
+
+    /***********Activity No 2-Creating and Appending Elements***********/
+   
+    //Task No 3 & 4-  
+
+    const n = `
+    <div>Welcome back</div>
+    <br>
+    `;
+
+    //way one
+    // document.querySelector('body').innerHTML += n;
+
+    //way two
+    // document.body.innerHTML += n;
+
+
+    document.querySelector('.js-button').addEventListener("click", () => {
+      const ulELement = document.querySelector('.ul-class');
+      ulELement.innerHTML = `
+        <li>1</li>
+        <li>2</li>
+        <li>3</li>
+        <li>4</li>
+        <li>5</li>
+      `;
+    })
+
+   /***********Activity No 3-Removing Elements***********/
+   
+    //Task No 5 & 6-
+
+    // document.querySelector('.js-p').remove(); //we removed the paragraph div using DOM
+    
+    
+    document.querySelector('.js-p').lastElementChild.remove(); //we remove the last parargraph of the html div using DOM
+
+
+    /***********Activity No 4-Modifying Attributes and Classes***********/
+   
+    //Task No 7 & 8-
+    //so for Task 7 we are changing the attributes of an image using DOM
+
+    const imgELement = document.querySelector('.js-image');
+
+    imgELement.setAttribute('title','Image title')//we have add a title to our Image 
+
+    imgELement.setAttribute('src', 'thumbnail-2.webp'); //here we changed the image source using setAttribute
+  
+
+    //Task 8-
+
+    const divElement = document.querySelector('.js-div');
+    
+    divElement.classList.add('css-div');
+    
+    document.querySelector('.js-remove-class')
+      .addEventListener('click', () => {
+        divElement.classList.remove('css-div');
+      });
+
+
+
+  /***********Activity No 5-Event Handling***********/
+   
+    //Task No 9 & 10-    
+    document.querySelector('.js-change-text')
+      .addEventListener('click', () => {
+        document.querySelector('.js-not-changed').innerHTML = 'Changed';
+    })
+
+
+    const mouseoverElement = document.querySelector('.classmouse')
+     
+    mouseoverElement.addEventListener('mouseover',() => {
+      mouseoverElement.style.border= '2px solid red';
+      })
+      setTimeout(() => {
+        mouseoverElement.style = '';
+    }, 2000);
+  </script>
+</body>
+</html>
