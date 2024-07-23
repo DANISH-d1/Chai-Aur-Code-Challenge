@@ -102,7 +102,7 @@ checkPromise();
 /********************Activity No 4 - Fetching Data from Api*********************/
 
 //Task No 1-
-
+//wayone
 const apiPromise = new Promise((resolve,reject) =>{
   const response = fetch('https://api.github.com/users/hiteshchoudhary');
   resolve(response);
