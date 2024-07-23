@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Handling</title>
+</head>
+<body>
+  <!-- Task 1- -->
+
+  <button class="js-change-button">Change Text</button>
+  <p class="change-para">Hello</p>
+  
+  <!-- Task 2 -->
+
+  <button class="js-img-button">Img Button</button>
+  <BR></BR>
+  <img class="js-img" src="/Day9-DOM/thumbnail-2.webp" style="width: 100px; ">
+  <br>
+  <!-- Way two -->
+   <!-- using display property -->
+  <button class="js-img-button2">Img Button</button>
+  <BR></BR>
+  <img class="js-img2" src="/Day9-DOM/thumbnail-2.webp" style="width: 100px; display: none; ">
+ 
+ <!-- Task 3 & 4 -->
+
+ <div class="js-task3" style="display: inline-block; padding: 10px;">Task 3</div>
+  <br>
+  <br>
+ <div class="js-task4" style="display: inline-block; margin-bottom: 20px; background-color: red; padding: 10px;">Task 4</div>
+  <br>
+ <!-- Task 5 & 6 -->
+
+  <!-- <input type="text" placeholder="Enter text" class="js-input"> -->
+  <div class="show-input"></div>
+
+  <!-- Task 7 & 8 -->
+
+
+   <form class="form" style="border: 2px solid gray; width: 300px; height: 250px; display: flex;
+   justify-content: center; align-items: center; margin: 10px; flex-direction: column;">
+    <p>Enter your username</p>
+    <input type="text" class="js-username">
+    
+    <p>Enter your password</p>
+    <input type="text" class="js-password" style="margin-bottom: 15px;">
+    <input type="submit" value="Submit">
+   </form>
+ 
+ <div>
+  <select name="" class="js-select">
+    <option>Select:</option>
+    <option value="Apple">Apple</option>
+    <option value="Banana">Banana</option>
+    <option value="Orange">Orange</option>
+  </select>
+  <p class="show-select"></p>
+ </div>
+
+ <ul class="ul">
+  <li class="li1">one</li>
+  <li class="li2">two</li>
+  <li class="li3">three</li>
+ </ul>
+ <script>
+    /***************Activity No 1- Basic Event Handling******************/
+    
+    //Task No 1 & 2
+
+    document.querySelector('.js-change-button').addEventListener('click',() => {
+      document.querySelector('.change-para').innerHTML = 'HELLO EVERYONE'
+      document.querySelector('.js-change-button').innerHTML = 'Changed Text'
+    });
+
+    //way one visibility property
+    let imgElement = document.querySelector('.js-img');
+    imgElement.style.visibility = 'hidden';
+    document.querySelector('.js-img-button').addEventListener('dblclick', () => {
+      imgElement.style.visibility = 'visible';
+    });
+
+
+    //way two using display property
+    document.querySelector('.js-img-button2').addEventListener('dblclick', () => {
+      document.querySelector('.js-img2').style.display = 'block';
+    });
+
+
+    /***************Activity No 2- Mouse Events******************/
+    
+    //Task No 3 & 4
+
+    const task3ELement = document.querySelector('.js-task3');
+      task3ELement.addEventListener('mouseover',() => {
+        task3ELement.style.backgroundColor = 'red';
+      });
+
+      const task4ELement = document.querySelector('.js-task4');
+      task4ELement.addEventListener('mouseover',() => {
+        task4ELement.style.backgroundColor = '';
+      });
+
+
+      /***************Activity No 3- Keyboard Events******************/
+    
+    //Task No 5 & 6-
+
+    // const inputElement = document.querySelector('.js-input');
+    // inputElement.addEventListener('keydown', (event) => {
+    //   console.log(event.key);
+    //   document.querySelector('.show-input').innerHTML = event.key;
+    // });
+
+
+    /***************Activity No 4- Form Events******************/
+    
+    //Task No 7 & 8-
+
+    const form = document.querySelector('.form');
+    form.addEventListener('submit',function(event){
+      event.preventDefault();
+
+      const username = document.querySelector('.js-username').value;
+      console.log(username);
+      const password = document.querySelector('.js-password').value;
+      console.log(password);
+    });
+
+
+    const selectElement = document.querySelector('.js-select');
+    const showElement = document.querySelector('.show-select');
+
+    selectElement.addEventListener('change',(event) => {
+      showElement.innerHTML = event.target.value;
+    });
+
+
+    /***************Activity No 4-Event delegation******************/
+    
+    //Task No 9 & 10-
+    const li1 = document.querySelector('.li1');
+    const li2 = document.querySelector('.li2');
+    const li3 = document.querySelector('.li3');
+    const ul = document.querySelector('.ul');
+    ul.addEventListener('click', (event) => {
+      console.log(event.target.innerHTML);
+    })
+
+  </script>
+</body>
+</html>
