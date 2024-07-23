@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Arrays</title>
-</head>
-<body>
-  
-  <script>
+
     /*******Activity No 1- Array Creation and Access*******/
 
     //Task No 1-
@@ -97,6 +90,4 @@
 
   console.log(info.flat(Infinity));
 
-  </script>
-</body>
-</html>
+ 

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Operators</title>
-</head>
-<body>
-  <script> 
+
   /**************************Activity No 1: Arithmetic Operators*****************************/
   //Task no 1- Add two numbers:
     const num1 = 10;
@@ -175,6 +169,3 @@
     
     console.log(checkNumber(10));
     console.log(checkNumber(-10));
-</script>
-</body>
-</html>

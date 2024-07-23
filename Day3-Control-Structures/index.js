@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
- <title>Control Structures</title>
-</head>
-<body>
-  
-  <script>
+
     /********************************-Activity No 1-If-else statement******************************/
     
     //Task No 1-
@@ -118,6 +111,3 @@
       }
     }
     checkLeapYear(2000);
- </script>
-</body>
-</html>

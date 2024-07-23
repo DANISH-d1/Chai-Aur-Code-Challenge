@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <title>Objects</title>
-</head>
-<body>
-  <script>
+
 
     /*********************Activity No 1- Object creation and Access*************************/
 
@@ -55,8 +49,8 @@
         books: 'no1'
       }
     }
-    // console.log(book3.library);
-    // console.log(book3.library.name);
+    console.log(book3.library);
+    console.log(book3.library.name);
 
     const library = [{
       name: 'python',
@@ -143,6 +137,3 @@
     //  console.log(`at index ${key} value is ${arr[key]}`);
     }
 
-</script>
-</body>
-</html>

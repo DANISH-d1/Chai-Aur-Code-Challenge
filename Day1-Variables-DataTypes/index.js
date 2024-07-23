@@ -1,14 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Variables and Data Types</title>
-</head>
-<body>
-
-  <script>
-    /***********************-Activity 1 & 2-************************/
+  /***********************-Activity 1 & 2-************************/
 
     var number = 10;
     // console.log(number);
@@ -66,9 +56,3 @@
     //   age: 22
     // };
     // console.log(object1);
-
-
-  </script>
-  
-</body>
-</html>

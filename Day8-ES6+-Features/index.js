@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>ES6+ Features</title>
-</head>
-<body>
-  <script>
+
     /************************Activity No 1- Template Literals*****************************/
 
     //Task No 1 & 2
@@ -164,6 +158,3 @@
     console.log(buyedCourse);
     console.log(buyedCourse.courseName);
     buyedCourse.newCourse();
-</script>
-</body>
-</html>

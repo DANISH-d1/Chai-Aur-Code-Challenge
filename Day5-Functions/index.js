@@ -1,11 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <title>Document</title>
-</head>
-<body>
-  
-  <script>
+
     /***********************Activity No 1-Function Declaration***************************/
     
     //Task No 1-
@@ -111,6 +104,3 @@
       cb(result);
     }
     call(2,4, (val) => console.log(val));
-</script>
-</body>
-</html>

@@ -1,10 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-   <title>Loops</title>
-</head>
-<body>
-  <script>
+
 
     /***************************Activity No 1 -  For loop********************************/
     
@@ -116,6 +110,3 @@
     }
       console.log(i);
     }
- </script>
-</body>
-</html>
