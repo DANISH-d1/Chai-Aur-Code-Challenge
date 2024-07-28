@@ -58,4 +58,139 @@ in makeFunc()->
 */
 
 
-/***************************Activity No 1- Understanding Closures***************************/
+/********************Activity No 1- Understanding Closures*********************/
+
+//Task No 1-
+
+function parentFunc(){
+  const parentName = 'xyz';
+  function childFunc(){
+    console.log('My parent name is:',parentName);
+  }
+  return childFunc;
+}
+
+const callFunc = parentFunc();
+callFunc();
+
+
+//Task No 2-
+
+function CloFunc(n){
+  return function counFunc(){
+    return n++;
+  };
+};
+
+const counter = CloFunc(5);
+// console.log(counter());
+// console.log(counter());
+// console.log(counter());
+
+
+/********************Activity No 2- Practical Closures*********************/
+
+//Task No 1-
+
+function generateUniqueId(){
+  // let uniqueId = Math.round(Math.random() * 10 + 1);
+  let uniqueId = 2;
+  console.log('Id before increment', uniqueId);
+  return function(){
+    //  const lastGeneratedId = uniqueId + 1;
+    //  uniqueId = lastGeneratedId;
+    //   return lastGeneratedId
+    // return uniqueId = uniqueId + 1;
+    return uniqueId += 1;
+    }
+  
+}
+
+// const callId = generateUniqueId();
+// console.log(callId());
+// console.log(callId());
+// console.log(callId());
+
+
+//Task No 2-
+
+function closreFunc(username){
+  
+  return function (){
+    return `Welcome Back ${username}`;
+  }
+}
+
+// const callUser = closreFunc("shaikh");
+// console.log(callUser());
+
+
+/********************Activity No 3- Closures in Loops*********************/
+
+//Task No 1-
+
+// function loopClosure(){
+//   let arr = [];
+//    function n(){}
+//   for(let i = 0; i < 3; i++){
+//     arr.fill(n())
+//   }
+//   console.log(arr);
+// }
+// loopClosure();
+
+
+/********************Activity No 4- Module Pattern*********************/
+
+//Task No 1-
+
+function closueFunction(){
+  let collection = [1,2];
+
+   function addItem(){
+     collection.push(3);
+     console.log(collection);
+    }
+    
+  function removeItem(){
+    collection.pop();
+    console.log(collection);
+  }
+   return {
+    addItem,removeItem
+   };
+}
+// const method = closueFunction();
+// method.addItem();
+// method.removeItem();
+
+
+
+/********************Activity No 5- Memoization*********************/
+
+//Task No 1-
+
+
+function result(a,b){
+  const result = a + b;
+  let preResult= result;
+  function memo(){
+    preResult += preResult;
+    console.log('previous result was:', preResult);
+  }
+  memo();
+  console.log(result);
+}
+
+// result(1,3)
+
+function memoize(fn) {
+  return fn;
+}
+
+const fn = (a, b) => a * b;
+const memoizedFn = memoize(fn);
+
+console.log(memoizedFn(1, 1)); // 1 (first call: cold)
+console.log(memoizedFn(1, 1)); // 1 (not memoized: it'll execute the function again)
+console.log(memoizedFn(1, 2)); // 2 (first call: cold)
