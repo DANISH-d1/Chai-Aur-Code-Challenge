@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>Document</title>
+</head>
+<body>
+
+  
+  <form action="">
+    <input class="name-input" type="text" placeholder="Enter your name">
+    <input class="email-input" type="text" placeholder="Enter your email">
+    <button class="js-button">Save</button>
+    <p class="show-info"></p>
+  </form>
+  
+  <script>
+
+  // SESSIONSTORAGE
+
+  //Task No 5-
+
+  const sStorage = 'this is session storage'
+
+  sessionStorage.setItem('sessionInfo', sStorage);
+  console.log(sessionStorage.getItem('sessionInfo'));
+
+  //Task No 6-
+
+  const sessionObj = {
+      courseName: 'js',
+      price: 999
+    }
+
+    sessionStorage.setItem('course', JSON.stringify(sessionObj));
+
+    const courseDetail = JSON.parse(sessionStorage.getItem('course'));
+    console.log(courseDetail);
+
+
+  //Task no 7-
+
+  const name = document.querySelector('.name-input'); 
+    const email = document.querySelector('.email-input'); 
+    const button = document.querySelector('.js-button');
+    const showInfo = document.querySelector('.show-info');
+    
+    button.addEventListener('click', () => {
+      const Name = name.value;
+      const Email = email.value;
+      sessionStorage.setItem('nameInfo', JSON.stringify(Name));
+      sessionStorage.setItem('emailInfo', JSON.stringify(Email));
+
+    })
+      const nameInfo = JSON.parse(sessionStorage.getItem('nameInfo'));
+      const emailInfo = JSON.parse(sessionStorage.getItem('emailInfo'));
+      showInfo.innerHTML = `Mr ${nameInfo} Your Email ${emailInfo} has saved`;
+
+
+  //Task no 4-
+
+    const Item = 'js';
+    sessionStorage.setItem('Item', Item);
+    const savedItem = sessionStorage.getItem('Item');
+    console.log('Item before Removing form LocalStorage', savedItem);
+
+    const removedItem = sessionStorage.removeItem('Item');
+    console.log('Item Removed form LocalStorage', removedItem);
+
+    
+  </script>
+</body>
+</html>

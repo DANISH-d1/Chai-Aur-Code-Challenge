@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <title>Document</title>
+</head>
+<body>
+
+  <form action="">
+    <input class="name-input" type="text" placeholder="Enter your name">
+    <input class="email-input" type="text" placeholder="Enter your email">
+    <button class="js-button">Save</button>
+    <p class="show-info"></p>
+  </form>
+  
+  <script>
+  //LOCALSTORAGE
+
+  //Task No 1-
+  // const str = 'This is localStorage';
+
+  // localStorage.setItem('string', str);
+
+  // const newStr = localStorage.getItem('string');
+  // console.log("NEW STRING:",newStr);
+
+  //Task No 2-
+
+    const objLocal = {
+      name: 'Js challange',
+      id: 123
+    }
+  localStorage.setItem("oldObject", JSON.stringify(objLocal));
+
+  const newObject = JSON.parse(localStorage.getItem("oldObject"));
+  // console.log(JSON.parse(newObject));
+  console.log(newObject);
+
+  //Task No 3-
+    const name = document.querySelector('.name-input'); 
+    const email = document.querySelector('.email-input'); 
+    const button = document.querySelector('.js-button');
+    const showInfo = document.querySelector('.show-info');
+    
+    button.addEventListener('click', () => {
+      const Name = name.value;
+      const Email = email.value;
+      localStorage.setItem('nameInfo', JSON.stringify(Name));
+      localStorage.setItem('emailInfo', JSON.stringify(Email));
+
+    })
+      const nameInfo = JSON.parse(localStorage.getItem('nameInfo'));
+      const emailInfo = JSON.parse(localStorage.getItem('emailInfo'));
+      showInfo.innerHTML = `Mr ${nameInfo} Your Email ${emailInfo} has saved`;
+
+  
+
+  //Task no 4-
+
+  const Item = 'JavaScript';
+  localStorage.setItem('Item', Item);
+  const savedItem = localStorage.getItem('Item');
+  console.log('Item before Removing form LocalStorage', savedItem);
+
+  const removedItem = localStorage.removeItem('Item');
+  console.log('Item Removed form LocalStorage', removedItem);
+
+  </script>
+</body>
+</html>
